@@ -18,6 +18,12 @@ app.get('/trips', async (req, res) => {
     res.json(trips);
 });
 
+app.post('/trips', async (req, res) => {
+    const trip = new Trip(req.body);
+    await trip.save();
+    res.json(trip);
+})
+
 app.listen(port, () => {
     console.log(`Server läuft auf Port ${port}`);
 });
