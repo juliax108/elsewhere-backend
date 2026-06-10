@@ -24,6 +24,16 @@ app.post('/trips', async (req, res) => {
     res.json(trip);
 })
 
+app.delete('/trips/:id', async (req, res) => {
+    await Trip.findByIdAndDelete(req.params.id)
+    res.json({ message: 'Trip gelöscht' });
+})
+
+app.put('/trips/:id', async (req, res) => {
+    const trip = await Trip.findByIdAndUpdate(req.params.id, req.body)
+    res.json(trip)
+})
+
 app.listen(port, () => {
     console.log(`Server läuft auf Port ${port}`);
 });
