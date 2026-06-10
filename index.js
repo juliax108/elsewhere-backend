@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
+const Trip = require('./models/trip');
 
 const app = express();
 const port = 3000;
@@ -12,8 +13,9 @@ mongoose.connect('mongodb://localhost:27017/elsewhere')
     .then(() => console.log('Datenbank verbunden'))
     .catch((err) => console.log(err))
 
-app.get('/trips', (req, res) => {
-    res.send('alle Trips');
+app.get('/trips', async (req, res) => {
+    const trips = await Trip.find();
+    res.json(trips);
 });
 
 app.listen(port, () => {
