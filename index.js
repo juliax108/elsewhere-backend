@@ -10,7 +10,7 @@ app.use(express.json());
 
 mongoose.connect('mongodb://localhost:27017/elsewhere')
     .then(() => console.log('Datenbank verbunden'))
-    .catch((err) => console.log('Datenbankfehler:', err))
+    .catch((err) => console.log(err))
 
 app.get('/trips', (req, res) => {
     res.send('alle Trips');
