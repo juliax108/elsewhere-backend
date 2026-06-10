@@ -8,7 +8,11 @@ const port = 3000;
 app.use(cors());
 app.use(express.json());
 
+app.get('/trips', (req, res) => {
+    res.send('alle Trips');
+});
+
 app.listen(port, () => {
-    console.log(`Server läfut auf Port ${port}`);
+    console.log(`Server läuft auf Port ${port}`);
 });
 
