@@ -80,3 +80,4 @@ ChatGPT wurde unterstützend verwendet für:
 - einzelne Fragen zu Node.js und Express
 - Unterstützung bei der Entwicklung der REST-API
 - Fehlersuche und Debugging
+- Hilfe bei Erstellung des README
